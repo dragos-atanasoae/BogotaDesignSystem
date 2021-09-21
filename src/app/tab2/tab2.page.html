@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title>
       Tab 2
@@ -6,12 +6,26 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+<ion-content>
+  <ion-item-divider>
+    <div id="wrap-colors">
+      <ion-button *ngFor="let color of colors" (click)="activeColor = color" [color]="color"
+        size="small" shape="round">
+      </ion-button>
+    </div>
+  </ion-item-divider>
+  <section id="section-buttons">
+    <ion-text color="primary">
+      <h2>Buttons</h2>
+    </ion-text>
+    <ion-button [color]="activeColor" expand="block" fill="solid">
+      Button
+    </ion-button>
+    <ion-button [color]="activeColor" expand="block" fill="outline">
+      Button
+    </ion-button>
+    <ion-button [color]="activeColor" expand="block" fill="clear">
+      Button
+    </ion-button>
+  </section>
 </ion-content>

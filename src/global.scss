@@ -24,3 +24,129 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+// Override ion-back-button component
+ion-back-button {
+    --padding-start: 4px;
+    --color: var(--ion-color-medium);
+}
+
+// Custom back button for modals
+.custom-back-button {
+    --padding-start: 0 !important;
+    --background-hover: transparent;
+    --background-hover-opacity: 0.1;
+    --background-focused: #fff;
+    --background-focused-opacity: 0.1;
+    --color: var(--ion-color-medium);
+    --icon-margin-end: -5px;
+    --icon-margin-start: 4px;
+    --icon-font-size: 1.85em;
+    --min-height: 32px;
+    font-size: 17px;
+}
+
+// Override page title (Android only)
+.header-md .title-default {
+    text-align: center;
+}
+
+ion-title {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+// Override default Ionic buttons
+ion-button {
+    --border-radius: 4px;
+    text-transform: none;
+}
+
+// Override Radio(item -> ion-radio | use property: mode="md")
+.custom-radio {
+    ion-radio {
+        margin-right: 0.75rem;
+        --border-width: 1px;
+    }
+}
+
+// Override Checkbox (item -> ion-checkbox | use property: mode="md")
+.custom-checkbox {
+    ion-checkbox {
+        margin-right: 0.75rem;
+        --border-width: 1px;
+    }
+}
+
+// Override Segment (use property: mode="md")
+.custom-segment {
+    border-radius: 8px;
+
+    ion-segment-button {
+        text-transform: none;
+        --background: #fff;
+        --background-hover: #fff;
+        --background-focused: #fff;
+    }
+
+    .segment-button-checked {
+        --background-checked: var(--ion-color-primary);
+        --background-hover: var(--ion-color-primary);
+        --background-focused: var(--ion-color-primary);
+        --color: #fff;
+        --color-checked: #fff;
+        --color-focused: #fff;
+        --color-hover: #fff;
+        --indicator-height: 0;
+        transition: background-color 400ms ease-in-out;
+    }
+
+}
+
+// Custom input item
+.custom-input {
+    height: fit-content;
+    --padding-start: 0;
+    --inner-padding-end: 0;
+    border: 1px solid var(--ion-color-medium);
+    border-radius: 8px;
+    position: relative;
+
+    ion-label {
+        position: absolute;
+        padding-left: 12px;
+        text-align: left;
+    }
+
+    &.item-has-focus,
+    &.item-has-value {
+        ion-label {
+            margin: 0;
+            padding-left: 16px;
+            transform: translate(0, -12px) scale(0.5);
+            transform-origin: left;
+            transition: all 300ms ease-in-out;
+        }
+    }
+
+    ion-input {
+        --padding-bottom: 0;
+        --padding-start: 12px;
+    }
+
+    &.item-has-focus {
+        border: 1px solid var(--ion-color-primary);
+    }
+
+    &.invalid-input {
+        border: 1px solid var(--ion-color-danger);
+
+        ion-label {
+            color: var(--ion-color-danger);
+        }
+    }
+
+    ion-icon {
+        margin-right: 0.5rem;
+    }
+}
